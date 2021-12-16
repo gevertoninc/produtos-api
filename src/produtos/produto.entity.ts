@@ -1,9 +1,13 @@
 export class ProdutoEntity {
-  constructor(id: string, nome: string) {
+  id: string;
+  nome?: string;
+  rating?: number;
+  created_at?: Date;
+
+  constructor(id: string, nome?: string, rating?: number, created_at?: Date) {
     this.id = id;
     this.nome = nome;
+    this.rating = rating;
+    this.created_at = created_at;
   }
-
-  id: string;
-  nome: string;
 }

@@ -1,10 +1,10 @@
+import { ProdutoParam } from './dto/produto.param';
 import { ProdutoEntity } from './produto.entity';
-import { ProdutoParam } from './produto.param';
 
 export class ProdutoRepository {
-  produtos: ProdutoEntity[] = [
-    { id: 'dc5f7732-b9e7-4758-a6b1-d0c42efb5118', nome: 'Um' },
-    { id: 'a31bb38b-2721-4ba5-8567-77f4b2004b84', nome: 'Dois' },
+  private readonly produtos: ProdutoEntity[] = [
+    { id: 'dc5f7732-b9e7-4758-a6b1-d0c42efb5118', nome: 'Um', rating: 1 },
+    { id: 'a31bb38b-2721-4ba5-8567-77f4b2004b84', nome: 'Dois', rating: 2 },
   ];
 
   obterTodos(): ProdutoEntity[] {
@@ -12,13 +12,17 @@ export class ProdutoRepository {
   }
 
   obterUm(id: string): ProdutoEntity {
-    return this.produtos.find((produto: ProdutoEntity) => produto.id === id);
+    const findProdutoById = (produto: ProdutoEntity) => produto.id === id;
+
+    return this.produtos.find(findProdutoById);
   }
 
   criar(produtoParam: ProdutoParam): ProdutoEntity {
     const produtoEntity: ProdutoEntity = new ProdutoEntity(
       produtoParam.id,
       produtoParam.nome,
+      produtoParam.rating,
+      new Date(),
     );
 
     this.produtos.push(produtoEntity);

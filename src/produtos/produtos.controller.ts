@@ -11,12 +11,12 @@ import {
 } from '@nestjs/common';
 import { IdProduto } from './id-produto';
 import { ProdutoEntity } from './produto.entity';
-import { ProdutoParam } from './produto.param';
-import { ProdutoService } from './produtos.service';
+import { ProdutoParam } from './dto/produto.param';
+import { ProdutosService } from './produtos.service';
 
 @Controller('produtos')
 export class ProdutosController {
-  constructor(private readonly produtoService: ProdutoService) {}
+  constructor(private readonly produtoService: ProdutosService) {}
 
   @Get()
   obterTodos(): ProdutoEntity[] {

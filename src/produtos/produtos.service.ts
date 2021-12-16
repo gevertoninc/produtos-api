@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { ProdutoEntity } from './produto.entity';
-import { ProdutoParam } from './produto.param';
+import { ProdutoParam } from './dto/produto.param';
 import { ProdutoRepository } from './produtos.repository';
 
 @Injectable()
-export class ProdutoService {
+export class ProdutosService {
   constructor(private readonly produtoRepository: ProdutoRepository) {}
 
   obterTodos(): ProdutoEntity[] {
