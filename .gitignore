@@ -1,0 +1,34 @@
+# compiled output
+dist
+node_modules
+
+# Logs
+*.log
+lerna-debug.log*
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+
+# Tests
+.nyc_output
+coverage
+
+# IDEs and editors
+*.launch
+*.sublime-workspace
+.c9
+.classpath
+.idea
+.project
+.settings
+
+# IDE - VSCode
+*.code-workspace
+.vscode
+
+# Local history
+.history
